@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "practiceudl"
+version = "0.1.0"
+description = "Practice exercises for Understanding Deep Learning by Simon Prince"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0",
+    "torchvision",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "pandas",
+    "pyyaml",
+    "tqdm",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "jupyter",
+]
+
+[tool.setuptools.packages.find]
+include = [
+    "udl*",
+    "ch5_loss_functions*",
+    "ch6_optimization*",
+    "ch7_init_activation_norm*",
+    "ch10_cnn*",
+    "ch11_residual_networks*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = ["-v", "--tb=short"]
+markers = [
+    "slow: marks tests as slow (use -m 'not slow' to skip)",
+    "gpu: marks tests requiring GPU",
+]

@@ -1,0 +1,7 @@
+name: no_batchnorm_resnet20
+
+model:
+  net_type: nobn
+
+optimizer:
+  lr: 0.01  # Lower LR for stability without BN

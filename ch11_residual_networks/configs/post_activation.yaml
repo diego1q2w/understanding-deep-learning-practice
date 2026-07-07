@@ -1,0 +1,4 @@
+name: post_activation_resnet20
+
+model:
+  net_type: post

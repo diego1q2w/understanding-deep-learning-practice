@@ -1,0 +1,9 @@
+name: pre_activation_resnet20
+
+model:
+  net_type: pre
+
+training:
+  batch_size: 64
+
+
